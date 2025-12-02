@@ -1,0 +1,47 @@
+VITERBI ALGORITHM RESULTS
+================================================================================
+
+Observation Sequence: ['O1 (/h/)', 'O2 (/e/)', 'O3 (/l/)', 'O4 (/o/)']
+Decoded State Sequence: ['S1 (/h/)', 'S2 (/e/)', 'S3 (/l/)', 'S4 (/o/)']
+Best Path Probability: 0.10886400
+Log Probability: -2.2177
+
+
+📋 EXPERIMENTAL ANALYSIS:
+
+1. VITERBI DECODING RESULTS:
+   - The Viterbi algorithm successfully decoded the observation sequence [O1, O2, O3, O4]
+   - Most Likely Phoneme Sequence: S1 (/h/) → S2 (/e/) → S3 (/l/) → S4 (/o/)
+   - This corresponds to the phonetic representation of "hello"
+   - Best Path Probability: 0.10886400
+   - Log Probability: -2.2177
+
+2. ALGORITHM PERFORMANCE:
+   - The algorithm correctly identified each phoneme from its corresponding acoustic feature
+   - Initial probability heavily favored starting with /h/ (π = 1.0)
+   - Transition probabilities guided the sequential flow: /h/ → /e/ → /l/ → /o/
+   - Emission probabilities strongly associated each observation with its intended phoneme
+
+3. KEY OBSERVATIONS:
+   - At t=1: State S1 (/h/) had highest probability (0.900000) for O1
+   - At t=2: Transition from S1 to S2 (/e/) was most probable for O2
+   - At t=3: State S3 (/l/) emerged as optimal for O3
+   - At t=4: Final state S4 (/o/) completed the sequence for O4
+
+4. MODEL EFFECTIVENESS:
+   - High emission probabilities (0.8-0.9) on diagonal of emission matrix ensured 
+     accurate phoneme-observation matching
+   - Transition matrix structure enforced logical phoneme progression
+   - The model effectively captured the sequential nature of speech
+
+5. PRACTICAL IMPLICATIONS:
+   - This HMM-based approach demonstrates viability for speech recognition tasks
+   - The Viterbi algorithm efficiently finds the optimal state sequence
+   - Real-world systems would use more complex models with continuous observations
+     and thousands of states, but the core principle remains the same
+
+✅ CONCLUSION:
+The Viterbi algorithm successfully decoded the word "hello" by identifying the
+correct phoneme sequence (/h/, /e/, /l/, /o/) with maximum probability of 0.10886400.
+The experiment validates the effectiveness of HMM-based speech recognition using
+the Viterbi decoding algorithm.
